@@ -1,0 +1,16 @@
+{
+  "rootDir": ".",
+  "roots": [
+    "<rootDir>",
+    "../bin"
+  ],
+  "testMatch": [
+    "<rootDir>/**/*.js"
+  ],
+  "coverageReporters": [
+    "text-summary",
+    "lcov"
+  ],
+  "bail": true,
+  "testEnvironment": "node"
+}

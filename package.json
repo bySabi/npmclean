@@ -1,0 +1,44 @@
+{
+  "name": "npmclean",
+  "version": "1.0.1",
+  "description": "Clean local module before install",
+  "main": "index.js",
+  "bin": {
+    "npmclean": "bin/cmd.js"
+  },
+  "scripts": {
+    "lint": "semistandard --fix --verbose | snazzy",
+    "jest": "jest --config test/jest.json",
+    "test": "npm run lint && npm run jest",
+    "format": "prettier-eslint --write 'src/**/*.js' 'test/**/*.js' 'bin/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bySabi/npmclean.git"
+  },
+  "keywords": [
+    "npm",
+    "clean",
+    "npmclean",
+    "development"
+  ],
+  "dependencies": {
+    "commander": "2.x.x",
+    "execa": "^0.7.0",
+    "fs-extra": "3.x.x",
+    "globby": "6.x.x",
+    "bluebird": "3.x.x"
+  },
+  "devDependencies": {
+    "semistandard": "*",
+    "snazzy": "7.x.x",
+    "jest-cli": "20.x.x",
+    "tmp-promise": "1.x.x"
+  },
+  "author": "bySabi Files",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bySabi/npmclean/issues"
+  },
+  "homepage": "https://github.com/bySabi/npmclean#readme"
+}
