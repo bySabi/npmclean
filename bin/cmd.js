@@ -12,22 +12,19 @@ program.on('--version', function () {
   console.log(program.version);
 });
 
-// default
 var npmClean = require('..');
-var cwd = process.cwd();
-var cleanStatus = true;
-
-npmClean(cwd)
+var cmdStatus = 0;
+npmClean(process.cwd())
   .then(function () {
     console.log('clean done!');
   })
   .catch(function (error) {
     console.log(error.message);
-    cleanStatus = false;
+    cmdStatus = 1;
   });
 
 process.on('exit', function (status) {
-  if (status === 1 || !cleanStatus) {
+  if (status === 1 || cmdStatus === 1) {
     process.exit(1);
   }
 });
