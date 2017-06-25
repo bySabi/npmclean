@@ -15,6 +15,7 @@ program.on('--version', function () {
 // default
 var npmClean = require('..');
 var cwd = process.cwd();
+var cleanStatus = true;
 
 npmClean(cwd)
   .then(function () {
@@ -22,10 +23,11 @@ npmClean(cwd)
   })
   .catch(function (error) {
     console.log(error.message);
+    cleanStatus = false;
   });
 
 process.on('exit', function (status) {
-  if (status === 1) {
+  if (status === 1 || !cleanStatus) {
     process.exit(1);
   }
 });

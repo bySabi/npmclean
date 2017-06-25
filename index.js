@@ -19,7 +19,7 @@ module.exports = function (cwd) {
           exec.shell('npm cache clean --force', { cwd: cwd })
         ]);
       } else {
-        return Promise.reject(new Error('package.json missing'));
+        return Promise.reject(new Error('missing package.json'));
       }
     });
 };
