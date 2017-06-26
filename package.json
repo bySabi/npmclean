@@ -10,7 +10,7 @@
     "lint": "semistandard --fix --verbose | snazzy",
     "jest": "jest --config test/jest.json",
     "test": "npm run lint && npm run jest",
-    "format": "prettier-eslint --write 'src/**/*.js' 'test/**/*.js' 'bin/**/*.js'"
+    "format": "prettier-eslint --single-quote --write '**/*.js'"
   },
   "repository": {
     "type": "git",
