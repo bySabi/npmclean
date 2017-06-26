@@ -23,7 +23,7 @@
     "development"
   ],
   "dependencies": {
-    "commander": "2.x.x",
+    "safe-commander": "2.x.x",
     "execa": "^0.7.0",
     "fs-extra": "3.x.x",
     "globby": "6.x.x",
