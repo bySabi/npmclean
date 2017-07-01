@@ -44,9 +44,28 @@ describe('clean module before install', function () {
   it('npmclean', function () {
     expect.assertions(2);
     return setup().spread(function (fixture) {
-      return npmClean(fixture).then(function () {
+      return npmClean(fixture, {}).then(function () {
         return glob(fixture + '/*').then(function (result) {
           expect(result.length).toEqual(1);
+          return fs
+            .pathExists(path.join(fixture, 'package.json'))
+            .then(function (exists) {
+              expect(exists).toBeTruthy();
+            });
+        });
+      });
+    });
+  });
+
+  it('npmclean --rm-lock', function () {
+    expect.assertions(2);
+    // Arrange
+    return setup().spread(function (fixture) {
+      // Act
+      return npmClean(fixture, { rmLock: true }).then(function () {
+        return glob(fixture + '/*').then(function (result) {
+          // Assert
+          expect(result.length).toEqual(2);
           return fs
             .pathExists(path.join(fixture, 'package.json'))
             .then(function (exists) {

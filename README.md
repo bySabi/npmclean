@@ -21,6 +21,20 @@ npm cache clean --force
 npm install npmclean -g
 ```
 
+## CLI options
+```bash
+$ npmclean -h
+
+  Usage: npmclean [options]
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+    -l, --rm-lock  Remove only package-lock.json
+    -s, --silent   Silent output console
+```
+
 ## Shell usage
 Clean & install module
 ```bash

@@ -1,6 +1,6 @@
 {
   "name": "npmclean",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Clean local module before install",
   "main": "index.js",
   "bin": {
@@ -10,7 +10,7 @@
     "lint": "semistandard --fix --verbose | snazzy",
     "jest": "jest --config test/jest.json",
     "test": "npm run lint && npm run jest",
-    "format": "prettier-eslint --single-quote --write '**/*.js'"
+    "format": "prettier-eslint --write '**/*.js' --eslint-path=node_modules/semistandard-prettier-eslint"
   },
   "repository": {
     "type": "git",
@@ -20,18 +20,21 @@
     "npm",
     "clean",
     "npmclean",
-    "development"
+    "development",
+    "package-lock.json"
   ],
   "dependencies": {
     "safe-commander": "2.x.x",
     "execa": "^0.7.0",
     "fs-extra": "3.x.x",
     "globby": "6.x.x",
-    "bluebird": "3.x.x"
+    "bluebird": "3.x.x",
+    "loglevel-colored-level-prefix": "1.x.x"
   },
   "devDependencies": {
     "semistandard": "*",
-    "snazzy": "7.x.x",
+    "snazzy": "*",
+    "semistandard-prettier-eslint": "*",
     "jest-cli": "20.x.x",
     "tmp-promise": "1.x.x"
   },
