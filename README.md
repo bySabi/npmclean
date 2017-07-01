@@ -5,20 +5,37 @@
 [![Windows Tests](https://img.shields.io/appveyor/ci/bySabi/npmclean/master.svg?label=Windows%20Tests)](https://ci.appveyor.com/project/bySabi/npmclean)
 [![bitHound Overall Score](https://www.bithound.io/github/bySabi/npmclean/badges/score.svg)](https://www.bithound.io/github/bySabi/npmclean)
 
-> Sometimes, in development stage, a clean module environment is needed.
-> This tool perform:
-
-```bash
-rm -rf node_modules
-rm -rf package-lock.json*
-npm cache clean --force
-```
+> In development flows some `npm 5` new features can be tiresome. With `npmclean` you could easily:
+- remove `package-lock.json` only
+- clean all modules, cache and `package-lock.json`
 
 ## Installation
 
 ### npm
 ```bash
-npm install npmclean -g
+$ npm install npmclean -g
+```
+
+## Shell usage
+### Full clean & install all modules
+```bash
+$ cd my-module
+$ npmclean && npm i
+```
+
+### Install new modules only
+```bash
+$ cd my-module
+$ npmclean -l && npm i
+```
+
+## `package.json` useful run-scripts
+```json
+"scripts": {
+  ...
+  "npmi": "npmclean -i && npm i",
+  "clean-install": "npmclean && npm i"
+}
 ```
 
 ## CLI options
@@ -35,18 +52,12 @@ $ npmclean -h
     -s, --silent   Silent output console
 ```
 
-## Shell usage
-Clean & install module
+## How full clean environment is performed
+
 ```bash
-cd my-module
-npmclean && npm i
-```
-## `package.json` usage
-```json
-"scripts": {
-  ...
-  "clean-install": "npmclean && npm install"
-}
+$ rm -rf node_modules
+$ rm -rf package-lock.json*
+$ npm cache clean --force
 ```
 
 ## Contributing
