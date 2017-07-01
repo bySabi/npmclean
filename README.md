@@ -33,7 +33,7 @@ $ npmclean -l && npm i
 ```json
 "scripts": {
   ...
-  "npmi": "npmclean -i && npm i",
+  "npmi": "npmclean -l && npm i",
   "clean-install": "npmclean && npm i"
 }
 ```

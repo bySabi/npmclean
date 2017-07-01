@@ -1,6 +1,6 @@
 {
   "name": "npmclean",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Clean local module before install",
   "main": "index.js",
   "bin": {
