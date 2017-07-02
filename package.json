@@ -7,7 +7,7 @@
     "npmclean": "bin/cmd.js"
   },
   "scripts": {
-    "lint": "semistandard --fix --verbose | snazzy",
+    "lint": "semistandard --verbose | snazzy",
     "jest": "jest --config test/jest.json",
     "test": "npm run lint && npm run jest",
     "format": "prettier-eslint --write '**/*.js' --eslint-path=node_modules/semistandard-prettier-eslint"
